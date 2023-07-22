@@ -19,4 +19,23 @@ def create_fake_orders():
 
 
 # create_fake_customers()
-create_fake_orders()
+# create_fake_orders()
+   
+
+orders = query_db("select * from orders")
+
+def find_order(date):
+    for order in orders:
+        if order[3]==date:
+            print(order)
+
+customers = query_db("select * from customers")
+
+def find_customer(name):
+    for customer in customers:
+        if customer[1] == name:
+            print(customer)
+        # else:
+        #     print("Did not found.")
+
+find_customer("Ana Hall")
